@@ -10,8 +10,8 @@ def main():
     parser.add_argument('--url', '-u', type=str, required=True, help="The URL of the GitLab's instance")
     parser.add_argument('--wordlist', '-w', type=str, required=True, help='Path to the username wordlist')
     parser.add_argument('-v', action='store_true', help='Enable verbose mode')
-    parser.add_argument('--delay', type=float, default=60.0, help="Delay (seconds) between retries")
-    parser.add_argument('--output', type=str, default="valid_users.txt", help="PATH to output file for valid users")
+    parser.add_argument('--delay', type=float, default=5.0, help="Delay (seconds) between retries")
+    parser.add_argument('--output', type=str, help="PATH to output file for valid users")
     args = parser.parse_args()
 
     print('GitLab User Enumeration in python')
@@ -46,9 +46,9 @@ def main():
                     time.sleep(args.delay*attempt)
                     print('[*] Retrying...')
                         
-    
-    with open(args.output, 'w') as f:
-        f.writelines(users)
+    if args.output is not None:
+        with open(args.output, 'w') as f:
+            f.writelines(users)
 
 if __name__ == '__main__':
     main()
