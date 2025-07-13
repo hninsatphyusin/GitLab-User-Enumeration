@@ -1,7 +1,7 @@
 # GitLab-User-Enumeration
 Python 3 Script for Enumerating Users on GitLab
 
-This code is an enhanced version of GitLab User Enum in Python 3](https://github.com/dpgg101/GitLabUserEnum/tree/main)
+This code is an enhanced version of [GitLab User Enum in Python 3](https://github.com/dpgg101/GitLabUserEnum/tree/main)
 
 ## Motivation
 The Academy Lab server occasionally experiences instability and is unable to handle a high volume of simultaneous connections. As a result, running the original script sometimes led to connection losses and uncaught Python errors, which would cause the script to terminate unexpectedly.
